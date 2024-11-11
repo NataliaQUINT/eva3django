@@ -1,0 +1,296 @@
+{% extends 'core/main.html' %}
+{% block lugares %}
+{% load static %}
+
+
+<!-- Sección de información adicional -->
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <img src="{% static 'core/images/logo.png' %}" alt="Logo" class="img-fluid" width="200">
+    </div>
+    
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- Tarjeta 1 -->
+        <div class="col">
+            <div class="card h-100">
+                <img src="{% static 'core/images/hospitalsote.jpg' %}" class="card-img-top" alt="Hospital Dr. Sótero del Río">
+                <div class="card-body">
+                    <h5 class="card-title">Hospital Dr. Sótero del Río</h5>
+                    <button class="btn btn-link p-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCard1" aria-expanded="false" aria-controls="collapseCard1">
+                        Leer más
+                    </button>
+                    <div id="collapseCard1" class="collapse">
+                        <p class="card-text">El Complejo Asistencial Dr. Sótero del Río es un hospital público chileno ubicado en la comuna de Puente Alto, atendiendo a más de un millón de personas.</p>
+                        <a href="{% url 'hospital' %}" class="btn btn-primary mt-2">Más detalles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tarjeta 2 -->
+        <div class="col">
+            <div class="card h-100">
+                <img src="{% static 'core/images/comisaria-puente-alto-38.jpg' %}" class="card-img-top" alt="38ª Comisaría Puente Alto">
+                <div class="card-body">
+                    <h5 class="card-title">38ª Comisaría Puente Alto</h5>
+                    <button class="btn btn-link p-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCard2" aria-expanded="false" aria-controls="collapseCard2">
+                        Leer más
+                    </button>
+                    <div id="collapseCard2" class="collapse">
+                        <p class="card-text">Dirección: Av. Concha y Toro 3399, Puente Alto. Carabineros de Chile tiene sus raíces en el Cuerpo de Vigilantes de Policía.</p>
+                        <a href="{% url 'comisaria' %}" class="btn btn-primary mt-2">Más detalles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="col">
+            <div class="card h-100">
+                <img src="{% static 'core/images/micro.jpg' %}" class="card-img-top" alt="Transporte">
+                <div class="card-body">
+                    <h5 class="card-title">Transporte</h5>
+                    <button class="btn btn-link p-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCard3" aria-expanded="false" aria-controls="collapseCard3">
+                        Leer más
+                    </button>
+                    <div id="collapseCard3" class="collapse">
+                        <p class="card-text">Direcciones a Inacap Puente Alto en transporte público, líneas de transporte cercanas: 205, 210, F24, y Metro L4.</p>
+                        <a href="{% url 'transporte' %}" class="btn btn-primary mt-2">Más detalles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+<div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-header">
+                Dirección
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Información sobre dirección</h5>
+                <p class="card-text"> Usted se encuentra aquí Ubicado en: Paradero 33 Av.Concha y Toro
+                    Dirección: Av. Concha y Toro 2730, 8150215 Puente Alto, Región Metropolitana</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-header">
+                Comercio
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Información sobre comercio</h5>
+                <p class="card-text"> PRONTO DISPONIBLE .</p>
+            </div>
+        </div>
+    </div>..
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-header">
+                Historia del lugar
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Historia del Puente Alto</h5>
+                <p class="card-text">Durante la colonia, el territorio de Puente Alto era una vía de comunicación entre la Cordillera de los Andes y el valle central, 
+                    transitado por comerciantes y arrieros. Tras la canalización del río Maipo en el siglo XIX, se desarrolló la agricultura y la industria vitivinícola. 
+                    En 1891, se creó la comuna bajo la "Ley de Comuna Autónoma", y en 1892 se fundó la municipalidad de Puente Alto. Su nombre proviene de un puente alto
+                    de ladrillos que cruzaba el canal Eyzaguirre. A fines del siglo XIX, se desarrollaron proyectos ferroviarios y en 1898 se le otorgó el título de villa.
+                    En el siglo XX, la industria, con fábricas como la Fábrica Victoria y la Compañía Manufacturera de Papeles y Cartones, atrajo a numerosos trabajadores,
+                    consolidando su crecimiento y progreso.</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Sección de servicios -->
+<div class="container mt-5">
+<div class="row row-cols-1 row-cols-md-3 g-4">
+<div class="col">
+<div class="card h-100">
+    <img src="./img/hospitalsote.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Hospital Dr. Sótero del Río</h5>
+        <p class="card-text">El Complejo Asistencial Dr. Sótero del Río es un hospital público chileno ubicado en la comuna de Puente Alto, 
+            en la zona sur oriente del área metropolitana del Gran Santiago. Con una población asignada de alrededor de un millón y medio de habitantes, 
+            es el hospital público que atiende la mayor cantidad de pacientes en el país. Es un centro asistencial de alta complejidad, por lo que es 
+            hospital base del Servicio de Salud Metropolitano Sur Oriente, que atiende a las comunas de Puente Alto, La Florida, San Ramón, La Granja, 
+            La Pintana, San José de Maipo y Pirque. 	
+            ubicado: Avenida Concha y Toro #3459, Puente Alto, Región Metropolitana, Chile</p>
+    </div>
+</div>
+</div>
+<div class="col">
+<div class="card h-100">
+    <img src="./img/comisaria-puente-alto-38.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">38ª Comisaría Puente Alto</h5>
+        <p class="card-text">Información sobre la comisaría de carabineros local
+            Dirección: Av. Concha y Toro 3399, 8150215 Puente Alto, Región Metropolitana Teléfono: (2) 2922 3320.
+        Historia
+        Carabineros de Chile tiene sus raíces en el Cuerpo de Vigilantes de Policía, establecido por Diego Portales Palazuelos en el siglo XIX 
+        para combatir la delincuencia post-independencia. En el siglo XX, evolucionó desde el Regimiento de Gendarmes hasta su consolidación como Carabineros de Chile en 1927, 
+        mediante un decreto firmado por el General Carlos Ibáñez del Campo. 
+        Esta institución ha sido fundamental en la seguridad pública chilena desde entonces.</p>
+    </div>
+</div>
+</div>
+<!-- Tarjetas de información desplegable -->
+<div class="container">
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="col">
+      <div class="card h-100">
+          <img src="{% static 'core/images/hospitalsote.jpg' %}" class="card-img-top" alt="Hospital Dr. Sótero del Río">
+          <div class="card-body">
+              <h5 class="card-title">Hospital Dr. Sótero del Río</h5>
+              <p class="card-text">El Complejo Asistencial Dr. Sótero del Río es un hospital público chileno ubicado en la comuna de Puente Alto.</p>
+          </div>
+      </div>
+  </div>
+  <div class="col">
+      <div class="card h-100">
+          <img src="{% static 'core/images/comisaria-puente-alto-38.jpg' %}" class="card-img-top" alt="38ª Comisaría Puente Alto">
+          <div class="card-body">
+              <h5 class="card-title">38ª Comisaría Puente Alto</h5>
+              <p class="card-text">Información sobre la comisaría de carabineros local.</p>
+          </div>
+      </div>
+  </div>
+  <!-- Añade más tarjetas según sea necesario -->
+</div>
+</div>
+<!-- Tarjetas de información desplegable -->
+<div class="container">
+<div class="accordion" id="infoAccordion">
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Hospital Dr. Sótero del Río
+            </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#infoAccordion">
+            <div class="accordion-body">
+                <img src="{% static 'core/images/hospitalsote.jpg' %}" class="img-fluid mb-3" alt="Hospital Dr. Sótero del Río">
+                El Complejo Asistencial Dr. Sótero del Río es un hospital público chileno ubicado en la comuna de Puente Alto.
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                38ª Comisaría Puente Alto
+            </button>
+             </h2>
+             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#infoAccordion">
+                <div class="accordion-body">
+                   <img src="{% static 'core/images/comisaria-puente-alto-38.jpg' %}" class="img-fluid mb-3" alt="38ª Comisaría Puente Alto">
+                   Información sobre la comisaría de carabineros local.
+             </div>
+          </div>
+       </div>
+       <!-- Añade más tarjetas según sea necesario -->
+    </div>
+    </div>
+
+<div class="col">
+<div class="card h-100">
+    <img src="./img/micro.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Transporte</h5>
+        <p class="card-text">Direcciones a Inacap Puente Alto en transporte público
+            Las siguientes líneas de transporte tienen rutas que pasan cerca de Inacap Puente Alto
+            MicroMicro: 205
+            205C
+            210
+            978
+            F24
+            F01
+            F13
+            F15
+            F30N
+            F07
+            226
+            213E
+            MetroMetro: L4.</p>
+    </div>
+</div>
+</div>
+<div class="col">
+<div class="card h-100">
+    <img src="./img/la-monseplaza.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">"La Monse": Conoce la historia de la plaza Elvira Matte</h5>
+        <p class="card-text">La Plaza Elvira Matte, también conocida como Monserap, es parte de la histórica villa Jorge Alessandri en Puente Alto.
+             Fundada en 1937 junto a la Compañía Manufacturera de Papeles, la villa proporcionaba vivienda a trabajadores y contaba con una plaza central y una parroquia,
+             destacándose por su comunidad y pulpería local que abastecía a sus habitantes en caso de que les faltase alimento o insumos de primera necesidad..</p>
+    </div>
+    </div>
+</div>
+<div class="col">
+    <div class="card h-100">
+        <img src="./img/municip.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Municipalidad de Puente Alto</h5>
+            <p class="card-text">Ubicado en: Paradero 36 Av.Concha y Toro
+                Dirección: Paradero 36 - Av. Concha y Toro 1820, 8152857 Puente Alto, Región Metropolitana
+                Teléfono: (2) 2810 1600
+                Horario: 
+                jueves	8:30 a.m.–1:45 p.m., 3–5:45 p.m.
+                viernes	8:30 a.m.–1:45 p.m., 3–5:45 p.m.
+                sábado	Cerrado
+                domingo	Cerrado
+                lunes	8:30 a.m.–1:45 p.m., 3–5:45 p.m.
+                martes	8:30 a.m.–1:45 p.m., 3–6:45 p.m.
+                miércoles	8:30 a.m.–1:45 p.m., 3–5:45 p.m.
+                .</p>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<!-- Sección de semáforos -->
+<div class="container">
+    <div class="semaforo">
+        <div class="rojo"></div>
+        <div class="amarillo"></div>
+        <div class="verde active"></div>
+    </div>
+</div>
+
+<!-- Sección de códigos QR -->
+<div class="container qr-code">
+    <h2 class="text-center">Escanea y explora más</h2>
+    <img src="./img/qr1.png" alt="QR Code 1" width="200" height="200">
+    <img src="./img/qr2.png" alt="QR Code 2" width="200" height="200">
+</div>
+
+<!-- Sección de comentarios -->
+<div class="container comment-box">
+    <h2 class="text-center">Déjanos tu comentario</h2>
+    <form action="/submit_comment" method="POST">
+        <div class="mb-3">
+            <label for="name" class="form-label">Nombre:</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="comment" class="form-label">Comentario:</label>
+            <textarea class="form-control" id="comment" name="comment" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar comentario</button>
+    </form>
+</div>
+
+
+
+
+<form action="{% url 'guardar_comentario' %}" method="post">
+    {% csrf_token %}
+    <textarea name="comentario" placeholder="Deja tu comentario"></textarea>
+    <button type="submit">Enviar</button>
+</form>
+
+{% endblock %}

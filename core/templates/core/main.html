@@ -1,0 +1,348 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   {% load static %}
+   <!-- basic -->
+   <meta-charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <!-- mobile metas -->
+   <meta-"viewport" content="width=device-width, initial-scale=1">
+   <meta-"viewport" content="initial-scale=1, maximum-scale=1">
+   <!-- site metas -->
+   <title>QRInformate-Login</title>
+   <meta name="keywords"  content="QR, Dispositivos Móviles, Ubicación, lugares interesantes, índice de peligrosidad, locomoción colectiva cercana">
+   <meta content="Nuestra aplicación comunitaria permite a personas de todo el mundo compartir incidentes y dar visibilidad a lo que ocurre en los barrios." name="description">
+   <meta name="description" content="Página de acceso QR con información de relevancia para los usuarios que visitan ciertos lugares adheridos">
+   <meta content="Nuestra aplicación esta dirigida a la comunidad para informar, compartir incidentes y dar visibilidad a lo que ocurre en sus cercanias" name="description">
+   <meta name="author" content="QRINFORMATE">
+
+   <link rel="icon" href="{% static 'core/images/logo.png' %} " type="image/png" />
+   <!-- bootstrap css -->
+   <link rel="stylesheet" href="{% static 'core/css/bootstrap.min.css' %} " />
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+   <!-- site css -->
+   <link rel="stylesheet" href="{% static 'core/style.css' %} " />
+   <!-- responsive css -->
+   <link rel="stylesheet" href="{% static 'core/css/responsive.css' %} " />
+   <!-- color css -->
+   <link rel="stylesheet" href="{% static 'core/css/colors.css' %} " />
+   <!-- select bootstrap -->
+   <link rel="stylesheet" href="{% static 'core/css/bootstrap-select.css' %} " />
+   <!-- scrollbar css -->
+   <link rel="stylesheet" href="{% static 'core/css/perfect-scrollbar.css' %} " />
+   <!-- custom css -->
+   <link rel="stylesheet" href="{% static 'core/css/custom.css' %} " />
+   <link href="https://fonts.googleapis.com" rel="preconnect">
+   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+   <style>
+      /* Estilo para mantener el footer en la parte inferior */
+      body {
+         display: flex;
+         flex-direction: column;
+         min-height: 100vh;
+      }
+      .full_container {
+         flex: 1;
+      }
+      .footer1 {
+         background-color: #0f3955;
+         color: #c8360d !important;
+         width: 100%;
+         padding: 20px 0;
+      }
+      .footer1 .barra-footer {
+         background-color: #973711 !important;
+         color: rgb(240, 248, 248);
+         text-align: center;
+      }
+   </style>
+</head>
+<body class="dashboard dashboard_1">
+   <div class="full_container">
+      <div class="inner_container">
+         <!-- Sidebar  -->
+         <nav id="sidebar">
+            <div class="sidebar_blog_1">
+               <div class="sidebar-header">
+                  <div class="logo_section">
+                     <a href="{% url 'index' %}""><img class="logo_icon img-responsive" src="{% static 'core/images/logo_icon.png' %} " alt="#" /></a>
+                  </div>
+               </div>
+                  <div class="sidebar_user_info">
+                     <div class="icon_setting"></div>
+                     <div class="user_profle_side">
+                        <div class="user_img"><img class="img-responsive" src="{% static 'core/images/layout_img/msg1.png' %}" alt="#" /></div>
+                        <div class="user_info">
+                           <h6>Bienvenido </h6>
+                           <p><span class="online_animation"></span> Conectado</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="sidebar_blog_2">
+                  <h4>Home</h4>
+                  <ul class="list-unstyled components">
+                     <li class="active">
+                        <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="bi bi-geo-alt-fill yellow_color"></i> <span>Estas Aqui</span></a>
+                        <ul class="collapse list-unstyled" id="dashboard">
+                           <li>
+                              <a href="dashboard.html"></a><span></span></a>
+                           </li>
+                           <li>
+                              <a href="dashboard_2.html"><span>Visitar</span></a>
+                           </li>
+                        </ul>
+                     </li>
+                     <li>
+                        <a href="#element" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="bi bi-signpost-split-fill green_color"></i> <span>Zonas</span></a>
+                        <ul class="collapse list-unstyled" id="element">
+                           <li><a href="{% url 'lugares' %}"> <span>Lugares</span></a></li>
+                           <li><a href="{% url 'lugares' %}"> <span>Visitar</span></a></li>
+                           <li><a href="{% url 'lugares' %}"> <span>Serv Urgencia</span></a></li>
+                           <li><a href="{% url 'lugares' %}"> <span>Municipalidad</span></a></li>
+                        </ul>
+                     </li>
+                     <li><a href="{% url 'index' %}"><i class="bi bi-person-fill blue2_color"></i> <span>Login</span></a></li>
+                     <li>
+                        <a href="#element" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="bi bi-bus-front-fill yellow_color""></i> <span>Transporte</span></a>
+                        <ul class="collapse list-unstyled" id="element">
+                           <li><a href="{% url 'transporte' %}"> <span>Publicos</span></a></li>
+                           <li><a href="{% url 'transporte' %}"> <span>Privados</span></a></li>
+                           <li><a href="{% url 'transporte' %}"> <span>Taxi</span></a></li>
+                           <li><a href="{% url 'transporte' %}"> <span>Colectivos</span></a></li>
+                           <li><a href="{% url 'transporte' %}"> <span>Acercamiento</span></a></li>
+                        </ul>
+                     </li>
+                     <li><a href="{% url 'formulario' %}"><i class="bi bi-clipboard2-data purple_color2"></i> <span>Formulario</span></a></li>
+                    
+                     <li>
+                        <a href="#apps" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="bi bi-google-play blue2_color"></i> <span>Apps</span></a>
+                        <ul class="collapse list-unstyled" id="apps">
+                           <li><a href="{% url email.html' %}"> 
+                              <i class="bi bi-envelope-at"></i><span>Email</span></a></li> 
+                           <li><a href="{% url calendar.html' %}"> <span>Calendario</span></a></li>
+                        </ul>
+                     </li>
+                     <li><a href="{% url 'registro' %}"><i class="bi bi-journal-text blue1_color"></i> <span>Registro</span></a></li>
+                     <li>
+                        <a href="{% url 'contacto' %}">
+                        <i class="bi bi-person-vcard red_color"></i> <span>Contacto</span></a></li>
+                     <li class="active">
+                        <a href="#additional_page" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-clone yellow_color"></i> <span>Paginas Adicionales</span></a>
+                        <ul class="collapse list-unstyled" id="additional_page">
+                           <li>
+                              <a href="{% url 'perfil' %}"> <span>Perfil</span></a>
+                           </li>
+                           <li>
+                              <a href="{% url 'main' %}"> <span>Home</span></a>
+                           </li>
+                           <li>
+                              <a href="{% url 'login' %}"> <span>Login</span></a>
+                           </li>
+                           <li>
+                              <a href="{% url 'error' %}"> <span>404 Error</span></a>
+                           </li>
+                        </ul>
+                     </li>
+                     <li><a href=""><i class="fa fa-map purple_color2"></i> <span>Map</span></a></li>
+                     <li><a href="{% url 'planes' %}"><i class="fa fa-bar-chart-o green_color"></i> <span>Planes</span></a></li>
+                     <li><a href=""><i class="fa fa-cog yellow_color"></i> <span>Configuracion</span></a></li>
+                  </ul>
+               </div>
+            </nav>
+         </style>
+         <!-- Google Maps API -->
+         <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+     </head>
+     <body>
+     
+         <!-- Barra de navegación -->
+         <nav class="navbar navbar-expand-lg navbar-light bg-light">
+             <a class="navbar-brand" href="#">QRinformate</a>
+             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                 <span class="navbar-toggler-icon"></span>
+             </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ml-auto">
+                     <li class="nav-item active"><a class="nav-link" href="#">Inicio</a></li>
+                     <li class="nav-item"><a class="nav-link" href="#">Características</a></li>
+                     <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+                 </ul>
+             </div>
+         </nav>
+     
+         <!-- Contenedor de la interfaz -->
+         <div class="container-fluid">
+             <div class="row">
+                 <!-- Barra lateral izquierda -->
+                 <div class="col-md-3 sidebar">
+                     <h5>Buscar en QRinformate</h5>
+                     <input type="text" class="form-control mb-3" placeholder="Buscar lugares...">
+     
+                     <h5>Historial Reciente</h5>
+                     <ul class="list-unstyled">
+                         <li>Santiago Región Metropolitana</li>
+                         <li>Cosas que hacer</li>
+                         <li>INACAP Puente Alto</li>
+                     </ul>
+     
+                     <h5>Esta área</h5>
+                     <p>Poco tráfico en esta zona <span class="badge badge-primary">13°</span></p>
+                 </div>
+     
+                 <!-- Mapa y botones de categorías -->
+                 <div class="col-md-9">
+                     <div class="category-buttons">
+                         <button class="btn btn-outline-secondary">Restaurantes</button>
+                         <button class="btn btn-outline-secondary">Hoteles</button>
+                         <button class="btn btn-outline-secondary">Cosas que hacer</button>
+                         <button class="btn btn-outline-secondary">Museos</button>
+                         <button class="btn btn-outline-secondary">Estaciones de transporte</button>
+                         <button class="btn btn-outline-secondary">Farmacias</button>
+                         <button class="btn btn-outline-secondary">Cajeros automáticos</button>
+                     </div>
+     
+                     <!-- Contenedor del mapa -->
+                     <div id="map"></div>
+                 </div>
+             </div>
+         </div>
+     
+         <!-- Bootstrap JS y dependencias -->
+         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+         <!-- Script personalizado -->
+         <script>
+             // Inicialización del mapa de Google Maps
+             function initMap() {
+                 const map = new google.maps.Map(document.getElementById("map"), {
+                     center: { lat: -33.5989, lng: -70.5793 }, // Coordenadas de ejemplo (céntricas)
+                     zoom: 12,
+                 });
+     
+                 // Marcadores de ejemplo
+                 const markers = [
+                     { lat: -33.600, lng: -70.580, title: "Farmacia Cruz Verde" },
+                     { lat: -33.618, lng: -70.580, title: "Parque Central" },
+                     { lat: -33.617, lng: -70.576, title: "Inacap Puente Alto" }
+                 ];
+                 
+                 markers.forEach(marker => {
+                     new google.maps.Marker({
+                         position: { lat: marker.lat, lng: marker.lng },
+                         map,
+                         title: marker.title
+                     });
+                 });
+             }
+         </script>
+            <!-- end sidebar -->
+            <!-- right content -->
+            <div id="content">
+               <!-- topbar -->
+               <div class="topbar">
+                  <nav class="navbar navbar-expand-lg navbar-light">
+                     <div class="full">
+                        <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
+                        <div class="logo_section">
+                           <a href="{% url 'main' %}"><img class="img-responsive" src="{% static 'core/images/logo.png' %} " alt="#" /> </a>
+                        </div>
+                        <div class="right_topbar">
+                           <div class="icon_info">
+                              <ul>
+                                 <li><a href="#"><i class="fa fa-bell-o"></i><span class="badge">1</span></a></li>
+                                 <li><a href="#"><i class="fa fa-envelope-o"></i><span class="badge">3</span></a></li>
+                              </ul>
+                              <ul class="user_profile_dd">
+                                 <li>
+                                    <a class="dropdown-toggle" data-toggle="dropdown"><img class=img src="{% static 'core/images/logo.png' %}" alt="#" /><span class="name_user">Administrador</span></a>
+                                    <div class="dropdown-menu">
+                                       <a class="dropdown-item" href="{% url 'perfil' %}">Mi Perfil</a>
+                                       <a class="dropdown-item" href=""">Configuracion</a>
+                                       <a class="dropdown-item" href="help.html">Ayuda</a>
+                                       <a class="dropdown-item" href="#"><span>Finalizar sesión</span> <i class="fa fa-sign-out"></i></a>
+                                    </div>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </nav>
+               </div>
+               <!-- end topbar -->
+                 <!-- Main container -->
+                 <div class="container-fluid">
+                  {% block principal %}{% endblock %}
+                  {% block Contacto %}{% endblock %}
+               </div>
+            </div>
+         </div>
+      </div>
+   
+      <!-- Footer -->
+      <footer class="footer1">
+         <div class="container">
+            <div class="row text-center text-md-start">
+               <div class="col-12 col-md-3">
+                  <img src="{% static 'core/images/logo blanco.jpg' %}" class="img-responsive" alt="Logo">
+               </div>
+               <div class="col-12 col-md-3">
+                  <h6 class="text-uppercase mb-3 font-weight-bold">Temas Relacionados</h6>
+                  <ul class="list-unstyled">
+                     <li><a href="#">Lugares</a></li>
+                     <li><a href="#">Locomoción</a></li>
+                     <li><a href="#">Paraderos</a></li>
+                     <li><a href="#">Recorridos</a></li>
+                  </ul>
+               </div>
+               <div class="col-12 col-md-3">
+                  <h6 class="text-uppercase mb-3 font-weight-bold">Datos de Contacto</h6>
+                  <ul class="list-unstyled">
+                     <li>QRInformate.cl</li>
+                     <li>+569 33388899</li>
+                     <li>Inacap<br>Sede Sur</li>
+                  </ul>
+               </div>
+               <div class="col-12 col-md-3">
+                  <h6 class="text-uppercase mb-3 font-weight-bold">Redes Sociales</h6>
+                  <ul class="list-unstyled">
+                     <li><a href="#"><i class="bi bi-facebook orange_color"></i> Facebook</a></li>
+                     <li><a href="#"><i class="bi bi-whatsapp orange_color"></i> WhatsApp</a></li>
+                     <li><a href="#"><i class="bi bi-instagram orange_color"></i> Instagram</a></li>
+                     <li><a href="#"><i class="bi bi-twitter orange_color"></i> Twitter</a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="barra-footer"> 
+            <div class="text-center p-2">
+               <p>Copyright © 2024. Reservados todos los derechos.</p>
+               <p>Diseñado y desarrollado para <a href="https://Inacap.cl/">Inacap_2024.cl</a> | Construido por <a href="https://QRInformate.cl">QRInformate</a>.</p>
+            </div>
+         </div>
+      </footer>
+   
+      <!-- Scripts JavaScript -->
+      {% block js %}{% endblock %}
+      <script src="{% static 'core/js/jquery.min.js' %}"></script>
+      <script src="{% static 'core/js/popper.min.js' %}"></script>
+      <script src="{% static 'core/js/bootstrap.min.js' %}"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="{% static 'core/js/animate.js' %}"></script>
+      <script src="{% static 'core/js/bootstrap-select.js' %}"></script>
+      <script src="{% static 'core/js/owl.carousel.js' %}"></script>
+      <script src="{% static 'core/js/Chart.min.js' %}"></script>
+      <script src="{% static 'core/js/Chart.bundle.min.js' %}"></script>
+      <script src="{% static 'core/js/utils.js' %}"></script>
+      <script src="{% static 'core/js/analyser.js' %}"></script>
+      <script src="{% static 'core/js/perfect-scrollbar.min.js' %}"></script>
+      <script src="{% static 'core/js/custom.js' %}"></script>
+      <script src="{% static 'core/js/jquery-3.3.1mi.js' %}"></script>
+      <script src="{% static 'core/js/main.js' %}"></script>
+      <script src="{% static 'core/js/api.js' %}"></script>
+      <script src="{% static 'core/js/ui.js' %}"></script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   </body>
+   </html>
+   

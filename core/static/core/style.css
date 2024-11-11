@@ -1,0 +1,566 @@
+/* Estilos generales */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+#map {
+  height: 80%;
+  width: 100%;
+}
+
+#coordinates, h1, p {
+  text-align: center;
+  margin-top: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+p {
+  color: #666;
+}
+
+/* Tipografía */
+@font-face {
+  font-family: 'Google Symbols';
+  font-style: normal;
+  font-weight: 100 700;
+  font-display: block;
+  src: url(//fonts.gstatic.com/l/font?kit=HhyAU5Ak9u-oMExPeInvcuEmPosC9zSpYaEEU68cdvrHJvcjqNPLEJIz8dTgzBT9ALQUyeAJjZW9-iIiYoUy8JdFzxNFsHs0Ld7AdfKqMNUz-qwMJeep_PkaIDxa-OteCFDT5qE5AeW09HYy9vcxkpEKPGcBGtMem8eg_HfPU0nUjp0l1yZdXFKph5rO3JzCUqYNN36v1ojn-TRSKNVBWfMdVHgf_wf0iciPwWDMxTkmdwo9adGBESJjnVWVXIv8DguLhukpyX8S7M5c77IxyqmSiBDkVTp83ovekcWVeoquxWrOl9SExmEFcsL6qYm_8y6Q1ofYnXxzxI_t7KWGPm8Ee9Si5gipooNqZ1TGMb6LAD9dHcegkw5n3uBsScwL9wZXSRtWHmlxCAd4CsUQ300aO-ktoRAbyUT3lYQo-SRTo7YSxUdBEg9aQZtIwRSC9pt6wecYpy5IuEjgqVuPQbmGsyKHCLpG2Zn1glK3XWI8C0x3VhR2kMelxeT4LiHkGvYUlZ6CEFiMMzHIBodLNsAjdZDVPEAMqccbIOsOJU8IST_LHzYMf7NWutKK4IEL8bdinNqX5xtXW6g3VhHNhLPjNa_X4mK_eqENhK3PI2WN_CHj0XwxJwWDJe-Ycgk6bfXdFGe5tXg3Olod9iZ6FoStOe-XhKo_on-8PanixMO-n8bmt908yc5gFuCqeG22jjbaULnkjf980U4KvwSkYHhFM7NEuq4fJeNapcEa13-iRdSHS5dGXrtgaqYSnrg5JAxBUGg5B6xWde6RgJpCsVA48QQeGuS9xOFbM_ux9UUOGIq_X9VGTB0tSxCTYFXeDVjp37xyfyfZMqnc1g5sTqILysnqn_pdIw9cyfE1YYYHBFRIdxexhXWXoVNzxDa1KzyEpdbnKhKoMizsmo-XSeAmp4a6g_m58oGcky4qNWNbhyVwzaZEK-XhBpWAi1EuaF9Gx-EcYE2mBRev3I708eABmC0unHvLQV4vBgIIE-2MOAFaL2AyzgAyZvfpYstUgto1OMtMoitw2QRy3OLLzBrZW_OV-NwpVTBh2dRDwGmCk0hknkuZS6JcD97NJQdlNZZ9On2lJb0ai2RjX3ODZLi37S2STZD2RLyMbvxdSQYTKsIDfA&skey=f8ec4d50247dc1c1&v=v302) format('woff2');
+}
+
+.google-symbols {
+  font-family: 'Google Symbols';
+  font-size: 24px;
+  display: inline-block;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Botones generales */
+.gb_A {
+  display: inline-block;
+  border-radius: 2px;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+}
+
+#gb #gb a.gb_A {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Estilos para tooltip */
+.gb_cd, .gb_dd {
+  border-style: dashed dashed solid;
+  position: absolute;
+  height: 0;
+  width: 0;
+  display: none;
+  animation: gb__a .2s;
+}
+
+.gb_cd {
+  border-bottom-color: #fff;
+  top: 37px;
+}
+
+.gb_dd {
+  border-bottom-color: rgba(0, 0, 0, .2);
+  top: 36px;
+}
+
+.gb_ka {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, .2);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+  position: absolute;
+  right: 0;
+  top: 44px;
+  border-radius: 2px;
+  display: none;
+}
+
+.gb_bd.gb_Sc .gb_cd, .gb_bd.gb_Sc .gb_dd, .gb_bd.gb_Sc .gb_ka, .gb_Sc.gb_ka {
+  display: block;
+}
+
+/* Scrollbar */
+.gb_Oe::-webkit-scrollbar {
+  height: 15px;
+  width: 15px;
+}
+
+.gb_Oe::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, .3);
+  border-radius: 10px;
+}
+
+.gb_Oe::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, .4);
+}
+
+/* Media Queries */
+@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-device-pixel-ratio: 1.25) {
+  .gb_5 .gb_8 {
+      background-image: url("https://ssl.gstatic.com/gb/images/v2_6991d7aa.png");
+  }
+}
+/* Fondo específico para ciertos elementos */
+#gb2 .gb_T,
+#gb22 .gb_T,
+#gb45 .gb_T,
+#gb72 .gb_T,
+#gb117 .gb_T,
+#gb136 .gb_T,
+#gb166 .gb_T {
+    background-image: url("//ssl.gstatic.com/gb/images/a/3a1e625196.png");
+}
+
+.gb_U #gb2 .gb_T::before,
+.gb_U #gb22 .gb_T::before,
+.gb_U #gb45 .gb_T::before,
+.gb_U #gb72 .gb_T::before,
+.gb_U #gb117 .gb_T::before,
+.gb_U #gb136 .gb_T::before,
+.gb_U #gb166 .gb_T::before {
+    content: url("//ssl.gstatic.com/gb/images/a/3a1e625196.png");
+}
+
+/* Estilos para Retina Display */
+@media (min-resolution: 1.25dppx),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-device-pixel-ratio: 1.25) {
+    .gb_V .gb_8 {
+        background-image: url("https://ssl.gstatic.com/gb/images/v2_6991d7aa.png");
+    }
+    .gb_U .gb_V .gb_8::before {
+        content: url("https://ssl.gstatic.com/gb/images/v2_6991d7aa.png");
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+    }
+}
+
+/* Estilos de opacidad y sombra */
+.gb_4 {
+    opacity: 0.5;
+}
+
+/* Estilos de interacción: Hover, Focus y Active */
+.gb_1:hover {
+    z-index: 1001;
+}
+
+.gb_1:hover a,
+.gb_2.gb_1:hover a {
+    border: 1px solid #e5e5e5;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+}
+
+/* Estilos de interacción avanzada para botones */
+.gb_Ua {
+    background: #fff;
+    border: 1px solid #dadce0;
+    color: #1a73e8;
+    display: inline-block;
+    text-decoration: none;
+}
+
+#gb .gb_Ua:hover {
+    background: #f8fbff;
+    border-color: #dadce0;
+    color: #174ea6;
+}
+
+#gb .gb_Ua:focus {
+    background: #f4f8ff;
+    color: #174ea6;
+    outline: 1px solid #174ea6;
+}
+
+#gb .gb_Ua:active {
+    background: #ecf3fe;
+    color: #174ea6;
+}
+
+/* Estados alternativos de botones */
+#gb .gb_Ua.gb_F {
+    background: transparent;
+    border: 1px solid #5f6368;
+    color: #8ab4f8;
+    text-decoration: none;
+}
+
+/* Estados hover y focus para botones alternativos */
+#gb .gb_Ua.gb_F:hover {
+    background: rgba(255, 255, 255, 0.04);
+    color: #e8eaed;
+}
+
+#gb .gb_Ua.gb_F:focus {
+    background: rgba(232, 234, 237, 0.12);
+    color: #e8eaed;
+    outline: 1px solid #e8eaed;
+}
+
+/* Iconos e imágenes */
+.gb_V .gb_8,
+.gb_V .gb_T {
+    display: inline-block;
+    vertical-align: top;
+    height: 64px;
+    width: 64px;
+}
+
+.gb_1:hover .gb_aa,
+.gb_2.gb_1 > .gb_V:active .gb_aa {
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+/* Contenedor principal de avatar */
+.gb_O {
+    background-size: 32px 32px;
+    border-radius: 50%;
+    display: block;
+    position: relative;
+    height: 32px;
+    width: 32px;
+}
+
+.gb_db {
+    background-color: #e8f0fe;
+    border: 1px solid rgba(32, 33, 36, 0.08);
+    position: relative;
+    height: 30px;
+    width: 30px;
+}
+
+/* Sombra para elementos circulares */
+.gb_eb {
+    background: #fff;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px rgba(60, 64, 67, 0.15);
+    height: 14px;
+    position: absolute;
+    right: 0;
+    width: 14px;
+}
+
+/* Texto e iconos en botones */
+a.gb_Pa {
+    color: #4285f4;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+    cursor: pointer;
+}
+
+a.gb_Pa:hover::after,
+a.gb_Pa:focus::after {
+    background-color: rgba(0, 0, 0, 0.12);
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+a.gb_Pa:hover,
+a.gb_Pa:focus {
+    text-decoration: none;
+}
+/* Estilos de Botón Circular */
+.gb_Cb {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 26px;
+  width: 26px;
+  margin: 0 2.5px 3px;
+  outline: 0;
+  -webkit-box-shadow: 0 1px 1px rgba(65, 69, 73, 0.3), 0 1px 3px rgba(65, 69, 73, 0.15);
+  box-shadow: 0 1px 1px rgba(65, 69, 73, 0.3), 0 1px 3px rgba(65, 69, 73, 0.15);
+}
+
+.gb_Cb:hover {
+  background-color: #f8faff;
+}
+
+.gb_Cb:focus,
+.gb_Cb:hover:focus,
+.gb_Cb:active,
+.gb_Cb:focus:active {
+  background-color: #f4f8ff;
+  -webkit-box-shadow: 0 1px 3px rgba(60, 64, 67, 0.3), 0 4px 8px rgba(60, 64, 67, 0.15);
+  box-shadow: 0 1px 3px rgba(60, 64, 67, 0.3), 0 4px 8px rgba(60, 64, 67, 0.15);
+}
+
+/* Tipografía */
+.gb_Eb, .gb_Fb {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gb_Eb {
+  font-weight: bold;
+  margin: -4px 0 1px;
+}
+
+.gb_Fb {
+  color: #666;
+}
+
+.gb_2 .gb_Eb {
+  color: #202124;
+  font: 500 16px/22px "Google Sans", Roboto, Arial, sans-serif;
+  text-align: center;
+  letter-spacing: 0.29px;
+}
+
+.gb_2 .gb_Fb {
+  color: #5f6368;
+  font: 400 14px/19px Roboto, Arial, sans-serif;
+  text-align: center;
+}
+
+.gb_2.gb_mb .gb_Eb,
+.gb_2.gb_mb .gb_Fb {
+  color: #e8eaed;
+}
+
+/* Botones de Acción */
+.gb_Nb {
+  background-color: #fff;
+  color: #3c4043;
+  padding: 14px 41px;
+  display: table;
+  text-align: center;
+  width: 100%;
+}
+
+.gb_mb .gb_Nb {
+  background-color: #2d2e30;
+  color: #e8eaed;
+  width: 270px;
+}
+
+.gb_Nb:hover {
+  background-color: #f7f8f8;
+}
+
+.gb_Nb:focus,
+.gb_Nb:hover:focus,
+.gb_Nb:active,
+.gb_Nb:focus:active {
+  background-color: #e8e8e9;
+}
+
+/* Estilos de Divisores */
+.gb_Tb {
+  padding: 0 17px;
+  text-align: center;
+  border-top: 1px solid #e8eaed;
+  border-bottom: 1px solid #e8eaed;
+}
+
+.gb_mb .gb_Tb {
+  border-top: 1px solid #5f6368;
+  border-bottom: 1px solid #5f6368;
+}
+
+/* Botones de Enlace */
+.gb_Ub,
+.gb_Vb {
+  display: inline-block;
+  padding: 10px 24px;
+  margin: 16px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.gb_Ub {
+  background-color: #fff;
+  color: #3c4043;
+  border: 1px solid #dadce0;
+}
+
+.gb_Vb {
+  background-color: #fff;
+  color: #1a73e8;
+}
+
+.gb_Ub:hover,
+.gb_Vb:hover {
+  background-color: #f7f8f8;
+}
+
+.gb_Ub:active,
+.gb_Vb:active,
+.gb_Ub:focus,
+.gb_Vb:focus {
+  background-color: #e8e8e9;
+  border-color: transparent;
+}
+
+/* Estilos de Notificaciones */
+.gb_ob {
+  background: #fef9db;
+  font-size: 11px;
+  padding: 10px 20px;
+}
+
+.gb_nb.gb_ob {
+  background: #e8f0fe;
+  border-radius: 4px;
+  margin: 4px;
+  padding: 4px 8px;
+  text-align: center;
+}
+
+/* Estilos de Iconos */
+.gb_Ob {
+  height: 20px;
+  width: 20px;
+}
+
+.gb_Cb > svg.gb_Db,
+.gb_Ob > svg.gb_Pb {
+  color: #5f6368;
+}
+
+.gb_mb .gb_Cb:hover > svg.gb_Db {
+  fill: #8ab4f8;
+}
+
+/* Estilos de Scrollbar */
+.gb_jb.gb_2::-webkit-scrollbar,
+.gb_la.gb_2::-webkit-scrollbar {
+  width: 16px;
+}
+
+.gb_jb.gb_2::-webkit-scrollbar-thumb,
+.gb_la.gb_2::-webkit-scrollbar-thumb {
+  background: #dadce0;
+  border-radius: 8px;
+  border: 4px solid transparent;
+}
+
+.gb_mb.gb_2::-webkit-scrollbar-thumb {
+  background-color: #5f6368;
+}
+
+/* Barra de progreso */
+.gb_qc {
+  background-color: #d2e3fc;
+  height: 3px;
+}
+
+.gb_mb .gb_qc {
+  background-color: rgba(138, 180, 248, 0.24);
+}
+
+.gb_rc {
+  background-color: #1a73e8;
+  height: 100%;
+  width: 50%;
+  animation: progressmove 1.5s linear infinite;
+}
+
+/* Botones principales */
+.gbqfba {
+  border: 1px solid #dcdcdc;
+  color: #444 !important;
+  font-size: 11px;
+  background: linear-gradient(top, #f5f5f5, #f1f1f1);
+}
+
+.gbqfba:hover {
+  border-color: #c6c6c6;
+  background: linear-gradient(top, #f8f8f8, #f1f1f1);
+}
+
+/* Barra de navegación */
+#gbq {
+  line-height: normal;
+  position: relative;
+  top: 0;
+}
+
+/* Barra de navegación */
+#gbq {
+  line-height: normal;
+  position: relative;
+  top: 0;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.gb_Oe {
+  font: 13px/27px Arial, sans-serif;
+  position: relative;
+  height: 60px;
+  width: 100%;
+}
+
+.gb_Oe::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: #e5e5e5;
+  display: none; /* Línea decorativa en la parte inferior */
+}
+
+/* Scrollbar personalizado */
+.gb_jb.gb_2::-webkit-scrollbar-thumb {
+  background: #dadce0;
+  border-radius: 8px; /* Esquinas redondeadas */
+}
+
+/* Centrando elementos en la pantalla */
+#wSgKnf {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 575px;
+  height: 143px;
+  background: url('//maps.gstatic.com/tactile/basepage/pegman_sherlock.png') no-repeat;
+  background-size: 160px 193px;
+  transform: translate(-50%, -50%); /* Centrando en ambas direcciones */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

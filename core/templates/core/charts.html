@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico de Seguridad</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    {% load static %}
+    <script src="{% static 'core/js/securityChart.js' %}"></script>
+
+</head>
+<body>
+
+<h3>Gráfico de Seguridad</h3>
+<canvas id="securityChart"></canvas>
+
+<h4>Seleccione su apreciación del lugar:</h4>
+<select id="securityLevel">
+    <option value="0">Seleccione...</option>
+    <option value="Seguro">Tranquilo (Verde)</option>
+    <option value="Moderado">Alerta (Amarillo)</option>
+    <option value="Riesgoso">Peligroso (Rojo)</option>
+</select>
+<button onclick="updateChart()">Enviar</button>
+
+<script>
+    // Configuración inicial del gráfico
+    var ctx = document.getElementById('securityChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Seguro', 'Moderado', 'Riesgoso'],
+            datasets: [{
+                label: 'Nivel de Seguridad',
+                data: [12, 19, 3], // Datos de ejemplo
+                backgroundColor: ['green', 'yellow', 'red']
+            }]
+        },
+        options: {
+            scales: {
+                y: { 
+                    beginAtZero: true 
+                }
+            }
+        }
+    });
+
+    // Función para actualizar el gráfico según la selección del usuario
+    function updateChart() {
+        var selectedLevel = document.getElementById('securityLevel').value;
+        if (selectedLevel === "0") {
+            alert("Por favor, seleccione un nivel de seguridad.");
+            return;
+        }
+
+        // Incrementa el valor de la categoría seleccionada
+        var index = chart.data.labels.indexOf(selectedLevel);
+        if (index !== -1) {
+            chart.data.datasets[0].data[index] += 1;
+            chart.update();
+            alert("Gracias por su apreciación.");
+        }
+    }
+</script>
+
+</body>
+</html>
